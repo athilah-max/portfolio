@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Marketing Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Portfolio.</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link active" data-target="home">Accueil</a></li>
+                <li><a href="#" class="nav-link" data-target="about">À propos</a></li>
+                <li><a href="#" class="nav-link" data-target="projects">Projets</a></li>
+                <li><a href="#" class="nav-link" data-target="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page-section active-section fade-in">
+            <div class="hero">
+                <h1>Le marketing digital, mon domaine de <span class="accent">prédilection.</span></h1>
+                <p class="subtitle">Objectif : accélérer votre présence digitale et booster vos conversions.</p>
+            </div>
+            
+            <div class="services-preview">
+                <h2>Mes Services</h2>
+                <div class="grid-3">
+                    <div class="card"><i class="fa-solid fa-magnifying-glass chart-icon"></i><h3>SEO & SEA</h3><p>Acquisition de trafic qualifié.</p></div>
+                    <div class="card"><i class="fa-solid fa-share-nodes chart-icon"></i><h3>Social Media</h3><p>Création et gestion de communauté.</p></div>
+                    <div class="card"><i class="fa-solid fa-envelope-open-text chart-icon"></i><h3>Emailing</h3><p>Fidélisation et automatisation.</p></div>
+                </div>
+            </div>
+
+            <div class="projects-preview">
+                <h2>Aperçu de mes projets</h2>
+                <div class="grid-2">
+                    <div class="card project-card"><h3>Stratégie d'acquisition</h3><p>Refonte SEO et campagnes Google Ads.</p></div>
+                    <div class="card project-card"><h3>Lancement Réseaux Sociaux</h3><p>Création de ligne éditoriale et visuels.</p></div>
+                </div>
+                <button class="btn-primary" onclick="navigateTo('projects')">Voir tous mes projets</button>
+            </div>
+
+            <div class="cta-bottom">
+                <h2>Prêt à propulser votre activité ?</h2>
+                <button class="btn-secondary" onclick="navigateTo('contact')">Me contacter</button>
+            </div>
+        </section>
+
+        <section id="about" class="page-section">
+            <h1 class="page-title">À propos de moi</h1>
+            <div class="about-content">
+                <p class="about-text">Passionnée par l'univers du web, le marketing digital est bien plus qu'un métier pour moi : c'est l'art de connecter une marque à son audience. Mon objectif est d'allier créativité et analyse de données pour construire des stratégies rentables et pérennes.</p>
+                
+                <div class="skills-container">
+                    <div class="skills-col">
+                        <h3><i class="fa-solid fa-bullseye accent"></i> Compétences</h3>
+                        <ul class="skill-list">
+                            <li>SEO / SEA</li>
+                            <li>Marketing Automation</li>
+                            <li>Emailing</li>
+                            <li>Réseaux Sociaux</li>
+                            <li>Création de sites web</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills-col">
+                        <h3><i class="fa-solid fa-laptop-code accent"></i> Logiciels</h3>
+                        <div class="tags">
+                            <span class="tag">Google Analytics</span> <span class="tag">Google Ads</span>
+                            <span class="tag">Meta Ads</span> <span class="tag">HubSpot</span>
+                            <span class="tag">Mailchimp</span> <span class="tag">WordPress</span>
+                            <span class="tag">Canva</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-col">
+                        <h3><i class="fa-solid fa-user-tie accent"></i> Savoir-être</h3>
+                        <ul class="skill-list">
+                            <li>Esprit d'équipe</li>
+                            <li>Capacité d'adaptation</li>
+                            <li>Esprit stratégique</li>
+                            <li>Créativité</li>
+                            <li>Force de proposition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="page-section">
+            <h1 class="page-title">Mes Projets</h1>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="strategie">Stratégie</button>
+                <button class="filter-btn" data-filter="communication">Communication</button>
+                <button class="filter-btn" data-filter="seo">SEO</button>
+                <button class="filter-btn" data-filter="sea">SEA</button>
+                <button class="filter-btn" data-filter="emailing">Emailing</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="card project-item" data-category="strategie seo">
+                    <h3>Audit & Stratégie SEO</h3>
+                    <p>Optimisation technique et sémantique pour doubler le trafic organique.</p>
+                    <span class="tag">Stratégie</span> <span class="tag">SEO</span>
+                </div>
+                <div class="card project-item" data-category="communication">
+                    <h3>Ligne Éditoriale Instagram</h3>
+                    <p>Développement de l'image de marque et création de contenu visuel.</p>
+                    <span class="tag">Communication</span>
+                </div>
+                <div class="card project-item" data-category="sea">
+                    <h3>Campagne Google Ads</h3>
+                    <p>Mise en place de campagnes Search avec un ROI de 300%.</p>
+                    <span class="tag">SEA</span>
+                </div>
+                <div class="card project-item" data-category="emailing strategie">
+                    <h3>Scénarios Automation</h3>
+                    <p>Création de workflows de bienvenue et de relance de paniers abandonnés.</p>
+                    <span class="tag">Emailing</span> <span class="tag">Stratégie</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h1 class="page-title">Un message = une <span class="accent">opportunité</span></h1>
+            <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Parlons de vos objectifs et atteignons-les ensemble !</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope accent"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contact@votre-email.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone accent"></i>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>07 00 00 00 00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="nom">Votre nom</label>
+                            <input type="text" id="nom" required placeholder="Nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="entreprise">Nom de votre entreprise</label>
+                            <input type="text" id="entreprise" required placeholder="Nom de l'entreprise">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse mail</label>
+                            <input type="email" id="email" required placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required placeholder="Votre message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-100">Envoyer</button>
+                    </form>
+                    <div id="formSuccess" class="success-message hidden">
+                        <i class="fa-solid fa-circle-check"></i> Merci pour votre message ! Je vous réponds très vite.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

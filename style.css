@@ -1,0 +1,186 @@
+/* Variables de couleurs */
+:root {
+    --bg-color: #05162E;
+    --text-color: #EAE3D8;
+    --accent-color: #C6A113;
+    --card-bg: rgba(234, 227, 216, 0.05); /* Fond des cartes légèrement transparent */
+}
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Typographie spécifique */
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+.accent { color: var(--accent-color); }
+.page-title { text-align: center; font-size: 3rem; margin-bottom: 40px; }
+
+/* En-tête / Menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    position: sticky;
+    top: 0;
+    background: rgba(5, 22, 46, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(198, 161, 19, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+nav ul { list-style: none; display: flex; gap: 30px; }
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+/* Effet de survol doré sur le header */
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+nav a:hover::after, nav a.active::after { width: 100%; }
+
+/* Gestion des sections (Single Page Application) */
+main { padding: 40px 5% 100px; min-height: 80vh; }
+.page-section { display: none; }
+.page-section.active-section { display: block; animation: fadeIn 0.6s ease forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Boutons */
+button { cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.3s ease; }
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btn-primary:hover { background-color: #e5be1c; transform: translateY(-3px); }
+.btn-secondary {
+    background: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.btn-secondary:hover { background: var(--accent-color); color: var(--bg-color); }
+.w-100 { width: 100%; }
+
+/* Accueil */
+.hero { text-align: center; margin: 80px 0; }
+.hero h1 { font-size: 4rem; margin-bottom: 20px; }
+.hero .subtitle { font-size: 1.2rem; opacity: 0.9; }
+
+.services-preview, .projects-preview, .cta-bottom { margin-top: 80px; text-align: center; }
+.services-preview h2, .projects-preview h2 { margin-bottom: 40px; font-size: 2.5rem; }
+
+/* Grilles & Cartes */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-bottom: 30px; }
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(198, 161, 19, 0.3);
+    padding: 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border-color: var(--accent-color);
+}
+.chart-icon { font-size: 2rem; color: var(--accent-color); margin-bottom: 15px; }
+.card h3 { font-family: 'Inter', sans-serif; margin-bottom: 10px; font-size: 1.3rem; }
+
+/* À Propos */
+.about-text { text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.1rem; }
+.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.skills-col h3 { font-size: 1.4rem; margin-bottom: 20px; border-bottom: 1px solid var(--accent-color); padding-bottom: 10px;}
+.skill-list { list-style-type: none; }
+.skill-list li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+.skill-list li::before { content: '▹'; color: var(--accent-color); position: absolute; left: 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag { background: var(--card-bg); border: 1px solid var(--accent-color); padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; }
+
+/* Projets */
+.filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+.filter-btn { background: transparent; color: var(--text-color); border: 1px solid var(--text-color); padding: 8px 20px; border-radius: 30px; }
+.filter-btn.active, .filter-btn:hover { background: var(--accent-color); color: var(--bg-color); border-color: var(--accent-color); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.project-item.hidden { display: none; }
+
+/* Contact */
+.contact-container { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; max-width: 1000px; margin: 0 auto; }
+.info-item { display: flex; gap: 20px; align-items: center; margin-bottom: 30px; }
+.info-item i { font-size: 1.5rem; }
+.info-item h4 { font-size: 1.2rem; }
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 15px; background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(234, 227, 216, 0.2); color: var(--text-color);
+    border-radius: 5px; font-family: 'Inter', sans-serif;
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent-color); }
+
+.success-message {
+    background-color: rgba(198, 161, 19, 0.2); border: 1px solid var(--accent-color);
+    padding: 15px; border-radius: 5px; margin-top: 20px; text-align: center; font-weight: 600;
+}
+.hidden { display: none; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .contact-container { grid-template-columns: 1fr; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    header { flex-direction: column; gap: 20px; }
+}
