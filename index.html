@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Marketing Digital</title>
+    <!-- Polices -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <!-- Icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header / Navigation -->
     <header>
         <div class="logo">Portfolio.</div>
         <nav>
             <ul>
-                <li><a href="#" class="nav-link active" data-target="home">Accueil</a></li>
-                <li><a href="#" class="nav-link" data-target="about">À propos</a></li>
-                <li><a href="#" class="nav-link" data-target="projects">Projets</a></li>
-                <li><a href="#" class="nav-link" data-target="contact">Contact</a></li>
+                <li><a href="#" class="nav-link active" data-target="home" data-index="0">Accueil</a></li>
+                <li><a href="#" class="nav-link" data-target="about" data-index="1">À propos</a></li>
+                <li><a href="#" class="nav-link" data-target="projects" data-index="2">Projets</a></li>
+                <li><a href="#" class="nav-link" data-target="contact" data-index="3">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="page-section active-section fade-in">
+        <!-- PAGE : ACCUEIL -->
+        <section id="home" class="page-section active-section slide-right">
             <div class="hero">
                 <h1>Le marketing digital, mon domaine de <span class="accent">prédilection.</span></h1>
                 <p class="subtitle">Objectif : accélérer votre présence digitale et booster vos conversions.</p>
@@ -44,15 +48,17 @@
                     <div class="card project-card"><h3>Stratégie d'acquisition</h3><p>Refonte SEO et campagnes Google Ads.</p></div>
                     <div class="card project-card"><h3>Lancement Réseaux Sociaux</h3><p>Création de ligne éditoriale et visuels.</p></div>
                 </div>
-                <button class="btn-primary" onclick="navigateTo('projects')">Voir tous mes projets</button>
+                <!-- Le bouton utilise maintenant l'index 2 (Projets) -->
+                <button class="btn-primary" onclick="goToSlide(2)">Voir tous mes projets</button>
             </div>
 
             <div class="cta-bottom">
                 <h2>Prêt à propulser votre activité ?</h2>
-                <button class="btn-secondary" onclick="navigateTo('contact')">Me contacter</button>
+                <button class="btn-secondary" onclick="goToSlide(3)">Me contacter</button>
             </div>
         </section>
 
+        <!-- PAGE : A PROPOS -->
         <section id="about" class="page-section">
             <h1 class="page-title">À propos de moi</h1>
             <div class="about-content">
@@ -94,6 +100,7 @@
             </div>
         </section>
 
+        <!-- PAGE : PROJETS -->
         <section id="projects" class="page-section">
             <h1 class="page-title">Mes Projets</h1>
             
@@ -130,6 +137,7 @@
             </div>
         </section>
 
+        <!-- PAGE : CONTACT -->
         <section id="contact" class="page-section">
             <h1 class="page-title">Un message = une <span class="accent">opportunité</span></h1>
             <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Parlons de vos objectifs et atteignons-les ensemble !</p>
@@ -179,6 +187,18 @@
             </div>
         </section>
     </main>
+
+    <!-- BARRE DE NAVIGATION TYPE CANVA -->
+    <div class="canva-navigation">
+        <button id="btn-prev" class="nav-arrow"><i class="fa-solid fa-chevron-left"></i> Précédent</button>
+        <div class="slide-indicators">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+        <button id="btn-next" class="nav-arrow">Suivant <i class="fa-solid fa-chevron-right"></i></button>
+    </div>
 
     <script src="script.js"></script>
 </body>
